@@ -9,9 +9,9 @@ youtube_service = YouTubeService()
 @router.get("/search_video")
 async def search_video(query: str):
     """Search YouTube for a video."""
-    video_url = youtube_service.search_videos(query)
+    video_url, video_id = youtube_service.search_videos(query)
     if video_url:
-        return {"video_url": video_url}
+        return {"id": video_id, "video_url": video_url}
     return {"error": "No video found."}
 
 @router.get("/get_transcript")

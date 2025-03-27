@@ -28,7 +28,7 @@ class YouTubeService:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 search_results = ydl.extract_info(f"ytsearch:{query}", download=False)
                 if 'entries' in search_results and search_results['entries']:
-                    return search_results['entries'][0]['url']
+                    return search_results['entries'][0]['url'], search_results['entries'][0]['id']
             return None
         except (youtube_dl.utils.DownloadError, HttpError) as e:
             print("Error:", e)
