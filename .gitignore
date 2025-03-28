@@ -1,2 +1,4 @@
 *.pyc
 .env
+*.sqlite3
+*.bin
