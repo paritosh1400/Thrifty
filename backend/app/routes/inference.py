@@ -11,7 +11,7 @@ huggingface_service = HuggingFaceService()
 vector_store = VectorStore()
 
 @router.post("/chat")
-def chat(prompt: str):
+async def chat(prompt: str):
     """Handle user chat query with history."""
     try:
         if not prompt:
