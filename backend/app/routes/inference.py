@@ -1,11 +1,13 @@
 from fastapi import APIRouter, HTTPException
 from uuid import uuid4
-from ..services.ollama_service import OllamaService
+# from ..services.ollama_service import OllamaService
+from ..services.huggingface_service import HuggingFaceService
 from ..services.vector_store import VectorStore
 
 router = APIRouter()
 
-ollama_service = OllamaService()
+# ollama_service = OllamaService()
+huggingface_service = HuggingFaceService()
 vector_store = VectorStore()
 
 @router.post("/chat")
@@ -22,7 +24,7 @@ def chat(prompt: str):
 User: {prompt}
 Bot:
 """
-        response = ollama_service.generate_response(full_prompt)
+        response = huggingface_service.generate_response(full_prompt)
         if response:
             message_id = str(uuid4())
             vector_store.add_message(message_id, prompt, response)
