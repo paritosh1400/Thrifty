@@ -14,9 +14,9 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_header=["*"],
 )
 
 @app.get("/")
 def home():
-    return {"message": "RAG-based FastAPI Server is Running 🚀"}
+    return {"message": "FastAPI Server is Running 🚀"}
