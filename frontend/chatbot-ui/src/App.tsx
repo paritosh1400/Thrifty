@@ -1,16 +1,17 @@
-// src/App.tsx
-import { useState } from 'react';
-import Test from './components/sidebar/Test';
+import Sidebar from './components/sidebar/Sidebar';
 import ChatArea from './components/chat/ChatArea';
 import './index.css'; // Ensure Tailwind is imported
 
 function App() {
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden dark bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text">
-        <p>This is where the two components will reside...t</p> 
+    <div className="flex flex-row h-screen bg-gray-900">
+      <Sidebar />
+      <div className="flex-grow">
+        <ChatArea />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App; 
