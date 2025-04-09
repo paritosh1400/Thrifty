@@ -1,10 +1,1 @@
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Optional: Add base body styles for dark mode */
-body {
-  /* Example: Define fallback background */
-  @apply bg-white dark:bg-dark-bg;
-}
+@import "tailwindcss";
